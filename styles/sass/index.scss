@@ -1,0 +1,163 @@
+$primaryColor: #0ca948;
+$darkGreen: #097934;
+$cream: #f6f6f6;
+$grey: rgba(0, 0, 0, 0.8);
+$lightGrey: #666666;
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    color: $grey;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.sku {
+    color: $lightGrey;
+    font-size: 12px;
+    margin-top: -10px;
+}
+
+header {
+    background-color: $grey;
+    margin-bottom: 40px;
+
+    .topbar {
+        background-color: black;
+
+        p {
+            color: $primaryColor;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin: 0px;
+            padding: 5px 0px;
+        }
+    }
+
+    svg {
+        background: #fff;
+        display: inline-block;
+        fill: $primaryColor;
+        height: 6.25rem;
+        position: relative;
+        width: 6.25rem;
+    }
+
+    .cream-wrapper {
+        background-color: $cream;
+        height: 40px;
+    }
+}
+
+main.row {
+    height: calc(100vh - 369px);
+}
+
+section.rating {
+    ul {
+        display: inline-block;
+        margin-left: 0px;
+        padding-left: 0px;
+
+        li {
+            color: $primaryColor;
+            display: inline-block;
+
+            &:last-of-type {
+                color: $lightGrey;
+            }
+        }
+
+        .grade {
+            font-size: 20px;
+        }
+    }
+
+    a.review {
+        color: $grey;
+        text-decoration: underline;
+
+    }
+
+}
+
+select {
+
+    &:focus {
+        outline-color: white;
+    }
+
+}
+
+button.add-to-cart {
+    background-color: $primaryColor;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+
+    i.material-icons {
+        display: inline-block;
+        font-size: 18px;
+        left: -10px;
+        line-height: 0;
+        position: relative;
+        top: 3px;
+    }
+    
+    &:hover,
+    &:focus {
+        background-color: $darkGreen;
+        outline-color: white;
+    }
+}
+
+.gallerywrapper {
+    padding: 10px;
+
+    .hero-img.container {
+        border-bottom: 1px solid $cream;
+        height: 300px;
+        position: relative;
+
+        .heroImg {
+            height: 100%;
+            object-fit: contain;
+            position: absolute;
+            width: 100%;
+        }
+
+    }    
+}
+
+.filmstrip.container.row {
+    margin-top: 10px;
+
+    .filmstrip {
+        margin: 0px;
+    }    
+
+    .filmstrip li.small-3.columns {
+        list-style: none;
+        
+        img {
+            border: 1px solid $grey;
+        }    
+
+    }
+    
+}
+
+footer {
+    background-color: $grey;
+    height: 200px;
+
+    .upper {
+        background: $cream;
+        height: 100px;
+    }
+
+}

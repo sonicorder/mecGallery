@@ -42,11 +42,13 @@ function request() {
       // Assign initial state
       hero.src = imgSrc[0].main;
 
-      // Assign src for Thumbs
+      // Loop Through Thumbs
       for(let i = 0; i < thumbsImg.length; i++) {
 
+          // Assign src for Thumbs
           thumbsImg[i].src = imgSrc[i].thumb;
 
+          // Change Hero src to match thumbmail clicked
           thumbsImg[i].onclick = function() {
             hero.src = imgSrc[i].main;
           }
