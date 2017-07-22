@@ -22,7 +22,7 @@ function request() {
       function clickity() {
 
         if( hero[ Number(this.className) - 1 ].className.indexOf('current') > -1 ) {
-          console.log("Already selected");
+          // console.log("Already selected");
         }else {
 
           for(var j = 0; j < hero.length; j++) {
