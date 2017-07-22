@@ -123,6 +123,23 @@ button.add-to-cart {
         height: 300px;
         position: relative;
 
+        .before,
+        .after {
+            color: $lightGrey;
+
+            i.material-icons {
+                font-size: 50px;
+                position: absolute;
+                top: calc(50% - 25px);
+
+                &.after {
+                    right: 0px;
+                    transform: rotate(180deg);
+                }
+            }            
+
+        }
+
         .heroImg {
             height: 100%;
             object-fit: contain;
