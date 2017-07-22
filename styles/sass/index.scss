@@ -124,22 +124,17 @@ button.add-to-cart {
         position: relative;
         overflow: hidden;
 
-        .before,
-        .after {
+        a.navigate {
             color: $lightGrey;
+            position: absolute;
+            top: calc(50% - 25px);
+            font-size: 50px;            
+            z-index: 10;        
 
-            i.material-icons {
-                font-size: 50px;
-                position: absolute;
-                top: calc(50% - 25px);
-                z-index: 10;
-
-                &.after {
-                    right: 0px;
-                    transform: rotate(180deg);
-                }
-            }            
-
+            &.after {
+                right: 0px;
+                transform: rotate(180deg);
+            }                     
         }
 
         img {
@@ -149,7 +144,7 @@ button.add-to-cart {
             top: 0;
             width: 100%;
             background: white;
-            transition: all 1.5s ease;
+            transition: all .5s ease;
             opacity: 0;
 
             &.current {
