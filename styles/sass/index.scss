@@ -122,6 +122,7 @@ button.add-to-cart {
         border-bottom: 1px solid $cream;
         height: 300px;
         position: relative;
+        overflow: hidden;
 
         .before,
         .after {
@@ -131,6 +132,7 @@ button.add-to-cart {
                 font-size: 50px;
                 position: absolute;
                 top: calc(50% - 25px);
+                z-index: 10;
 
                 &.after {
                     right: 0px;
@@ -140,11 +142,33 @@ button.add-to-cart {
 
         }
 
-        .heroImg {
+        img {
             height: 100%;
             object-fit: contain;
             position: absolute;
+            top: 0;
             width: 100%;
+            background: white;
+            transition: all 0.3s ease;
+            opacity: 0;
+
+            &.current {
+                right: 0!important;
+                opacity: 1;
+            }
+
+            &.two {
+                // right: -563px;
+            }
+
+            &.three {
+                // display: none;
+            }
+
+            &.four {
+                // display: none;                
+            }            
+
         }
 
     }    

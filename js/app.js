@@ -13,58 +13,52 @@ function request() {
       // Assign response to 'bike'
       let bike = productResponse.products;
 
-      // Hold Src
-      const imgInfo = [
-        {
-          thumb: bike[0].default_image_urls.small_image_url,
-          main:  bike[0].default_image_urls.main_image_url,
-          name:  bike[0].full_name
-        },
-        {
-          thumb: bike[1].default_image_urls.small_image_url,
-          main:  bike[1].default_image_urls.main_image_url,
-          name:  bike[1].full_name          
-        },
-        {
-          thumb: bike[2].default_image_urls.small_image_url,
-          main:  bike[2].default_image_urls.main_image_url,
-          name:  bike[2].full_name          
-        },
-        {
-          thumb: bike[3].default_image_urls.small_image_url,
-          main:  bike[3].default_image_urls.main_image_url,
-          name:  bike[3].full_name          
-        }                        
-      ]
+      // Declare imgInfo
+      const imgInfo = [];
 
       // Get Hero Image
-      const hero = document.querySelector('.heroImg');
+      const hero = document.querySelectorAll('.hero-img.container img');
+
+      function clickity() {
+
+        if( hero[ Number(this.className) - 1 ].className.indexOf('current') > -1 ) {
+          console.log("Already selected");
+        }else {
+
+          for(var j = 0; j < hero.length; j++) {
+            hero[j].className = "";
+            hero[ Number(this.className) - 1 ].className = "current";
+          } // End For
+        
+        } // End Else
+        
+      }
 
       // Get Thumbs
-      const thumbsImg = document.querySelectorAll('.thumb');        
-
-      // Assign initial state
-      hero.src = imgInfo[0].main;
-      hero.alt = imgInfo[0].name;
+      const thumbsImg = document.querySelectorAll('.thumbs a img');       
 
       // Loop Through Thumbs
       for(let i = 0; i < thumbsImg.length; i++) {
+          
+          // Populate imgInfo
+          imgInfo[i] = {
+            thumb: bike[i].default_image_urls.small_image_url,
+            main:  bike[i].default_image_urls.main_image_url,
+            name:  bike[i].full_name            
+          }
 
           // Assign src for Thumbs
           thumbsImg[i].src = imgInfo[i].thumb;
           thumbsImg[i].alt = imgInfo[i].name;
 
-          // Change Hero src to match thumbmail clicked
-          thumbsImg[i].onclick = function() {
-            hero.src = imgInfo[i].main;
-            hero.alt = imgInfo[i].name;
-          }
+          // Assign initial state
+          hero[i].src = imgInfo[i].main;
+          hero[i].alt = imgInfo[i].name;          
 
-      }      
+          thumbsImg[i].onclick = clickity;      
 
-      
+      } // End outer for      
 
-      console.log(bike);
     })
     .catch((e) => {
       console.log(`Error`);
